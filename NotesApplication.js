@@ -40,7 +40,7 @@
 	NotesApplication.prototype.search = function(search_text){
 		if (typeof search_text = 'string'){
 			for (var i = 0, i < this.notes.length, i++){
-				if (this.note[i].indexOf(search_text) != 0){
+				if (this.notes[i].indexOf(search_text) != 0){
 					Console.log("Showing results for " + "'" + search_text + "'");
 					Console.log("NOTE ID: " + id);
 					Console.log(this.notes[i]);
@@ -57,20 +57,21 @@
 	// This function deletes the note at the index of the notes list
 	NotesApplication.prototype.delete = function(note_id){
 		if(typeof note_id === 'number' {
-			this.note.splice(note_content)
+			this.notes.splice(note_content);
 		}
 		else{
-			return "This note does not exist"
+			return "This note does not exist";
 		}
 	}
 
 	// This function replaces the content in the note at note_id with new_content.
 	NotesApplication.prototype.edit = function(note_id, new_content){
-		if (typeof note_id === 'number' && typeof new_content === 'string'){
-			this.notes[note_id] = new_content
+		if((parseInt(note_id, 10) + 0 < 1)||(parseInt(note_id, 10) > (this.noteArray.length - 1))){
+			this.notes[note_id] = new_content;
+			return "Note Edited Successfully";
 		}
 		else{
-			return "You have not entered any content"
+			return "Note could not be edited";
 		}
 
 	}
