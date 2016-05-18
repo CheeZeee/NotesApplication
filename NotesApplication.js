@@ -8,18 +8,19 @@
 	NotesApplication.prototype.create = function(note_content){
 		if(typeof note_content) === 'string' {
 			this.notes.push(note_content);
+			console.log("Note succesfully created");
 		}
 		else{
-			return "Content should be of the string type"
+			console.log("Content should be of the string type");
 		}
 	}
 
 	// This function lists out each of the notes in the notes list
 	NotesApplication.prototype.listnotes = function(notes){
 		for (var i = 0, i< this.notes.length, i++) {
-			console.log("NOTE ID " + i);
+			console.log("\nNOTE ID " + i);
 			console.log(this.notes[i]);
-			console.log("By Author: " + this.author);
+			console.log("\nBy Author: " + this.author + "\n");
 
 		}
 	}
@@ -28,10 +29,10 @@
 	// returns the content of that note as a string.
 	NotesApplication.prototype.get = function(note_id){
 		if (typeof note_id === 'number' && != 'undefined'){
-			return this.notes[note_id];
+			console.log(this.notes[note_id]);
 		}
 		else{
-			return "Note ID should be a number"
+			console.log("Note ID should be a number");
 		}
 	}
 
@@ -41,14 +42,14 @@
 		if (typeof search_text = 'string'){
 			for (var i = 0, i < this.notes.length, i++){
 				if (this.notes[i].indexOf(search_text) != 0){
-					Console.log("Showing results for " + "'" + search_text + "'");
-					Console.log("NOTE ID: " + id);
+					Console.log("\nShowing results for " + "'" + search_text + "'");
+					Console.log("\nNOTE ID: " + id);
 					Console.log(this.notes[i]);
-					Console.log("By Author " + author);
+					Console.log("\nBy Author " + author + "\n");
 
 				}
 				else{
-					return "Search item should be of the string format"
+					console.log("Search item should be of the string format");
 				}
 			}
 		}
@@ -58,9 +59,10 @@
 	NotesApplication.prototype.delete = function(note_id){
 		if(typeof note_id === 'number' {
 			this.notes.splice(note_content);
+			console.log("Note succesfully deleted");
 		}
 		else{
-			return "This note does not exist";
+			console.log("This note does not exist");
 		}
 	}
 
@@ -68,10 +70,10 @@
 	NotesApplication.prototype.edit = function(note_id, new_content){
 		if((parseInt(note_id, 10) + 0 < 1)||(parseInt(note_id, 10) > (this.noteArray.length - 1))){
 			this.notes[note_id] = new_content;
-			return "Note Edited Successfully";
+			console.log("Note Edited Successfully");
 		}
 		else{
-			return "Note could not be edited";
+			console.log("Note could not be edited");
 		}
 
 	}
