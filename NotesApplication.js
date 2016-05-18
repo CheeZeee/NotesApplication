@@ -13,3 +13,13 @@
 			return "Content should be of the string type"
 		}
 	}
+	
+	// This function lists out each of the notes in the notes list
+	NotesApplication.prototype.listnotes = function(notes){
+		for (var i = 0, i< this.notes.length, i++) {
+			console.log("NOTE ID " + i);
+			console.log(this.notes[i]);
+			console.log("By Author: " + this.author);
+
+		}
+	}
