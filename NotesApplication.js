@@ -63,3 +63,16 @@
 			return "This note does not exist"
 		}
 	}
+
+	// This function replaces the content in the note at note_id with new_content.
+	NotesApplication.prototype.edit = function(note_id, new_content){
+		if (typeof note_id === 'number' && typeof new_content === 'string'){
+			this.notes[note_id] = new_content
+		}
+		else{
+			return "You have not entered any content"
+		}
+
+	}
+
+}
