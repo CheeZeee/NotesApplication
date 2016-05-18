@@ -53,3 +53,13 @@
 			}
 		}
 	}
+
+	// This function deletes the note at the index of the notes list
+	NotesApplication.prototype.delete = function(note_id){
+		if(typeOf(note_content) == typeOf(0)){
+			this.note.splice(note_content)
+		}
+		else{
+			return "This note does not exist"
+		}
+	}
