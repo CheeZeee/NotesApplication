@@ -23,7 +23,9 @@
 
 		}
 	}
-	// This function lists out each of the notes in the notes list
+	// This function takes a note_id which refers to the index 
+	// of the note in the notes list and 
+	// returns the content of that note as a string.
 	NotesApplication.prototype.get = function(note_id){
 		if (typeof note_id === 'number' && != 'undefined'){
 			return this.notes[note_id];
