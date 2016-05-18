@@ -34,3 +34,22 @@
 			return "Note ID should be a number"
 		}
 	}
+
+	// This function take a search text
+	// and returns all the notes with that text within it
+	NotesApplication.prototype.search = function(search_text){
+		if (typeof search_text = 'string'){
+			for (var i = 0, i < this.notes.length, i++){
+				if (this.note[i].indexOf(search_text) != 0){
+					Console.log("Showing results for " + "'" + search_text + "'");
+					Console.log("NOTE ID: " + id);
+					Console.log(this.notes[i]);
+					Console.log("By Author " + author);
+
+				}
+				else{
+					return "Search item should be of the string format"
+				}
+			}
+		}
+	}
