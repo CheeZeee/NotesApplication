@@ -1,4 +1,4 @@
-'use strict'; //this creates an instance of a class
+'use strict'; 
 
 describe ("NotesApplication", function() {
 	var author1 = new NotesApplication("Chika Onwueyi");
