@@ -3,7 +3,7 @@
 describe ("NotesApplication", function() {
 	var author1 = new NotesApplication("Chika Onwueyi");
 	beforeEach(function() {
-    author1.create("I love football"));
+    author1.create("I love football");
     });
 
 	// for the author to be defined
@@ -18,23 +18,17 @@ describe ("NotesApplication", function() {
 
 	// for the create function
 	it("should create a new note", function() {
-		spyOn(author, 'create');
+		spyOn(author1, 'create');
 		author1.create('I love football');
 		expect(typeof author1.create.calls.argsFor(0)[0]).toEqual('string');
 	});
-
-
-	it("should list the notes at the given index", function(){
-		expect(typeof author.listnotes.get.calls.argsFor(0)[0]).toMatch(typeof 'string')
-	});
-
 
 
 	// for the get id function
 	it("should accept a number as argument", function() {
 		spyOn(author1, 'get');
 		author1.get(0);
-		expect(typeof author1.get.calls.argsFor(0)[0]).toEqual(typeof 'number');
+		expect(typeof author1.get.calls.argsFor(0)[0]).toEqual('number');
 		
 	});
 
