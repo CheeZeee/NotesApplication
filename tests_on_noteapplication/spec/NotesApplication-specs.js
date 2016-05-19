@@ -2,8 +2,8 @@
 
 describe ("NotesApplication", function() {
 	var author1 = new NotesApplication("Chika Onwueyi");
-		beforeEach(function() {
-    	author1.create("I love football"));
+	beforeEach(function() {
+    author1.create("I love football"));
     });
 
 	// for the author to be defined
@@ -12,7 +12,7 @@ describe ("NotesApplication", function() {
 	});
 
 	// for the note to be defined
-	it('should possess "notes" property', function() {
+	it('should possess "notes" attribute', function() {
 		expect(author1.notes).toBeDefined();
 	});
 
@@ -24,16 +24,18 @@ describe ("NotesApplication", function() {
 	});
 
 
-	it("should list the notes at the given index", function(note_id){
+	it("should list the notes at the given index", function(){
 		expect(typeof author.listnotes.get.calls.argsFor(0)[0]).toMatch(typeof 'string')
 	});
 
 
 
 	// for the get id function
-	it("should list out the note in the list", function(note_id) {
-		expect(typeof author1.get(note_id)).toBe(typeof 'number');
-		expect(author1.get(note_id)).toBeDefined();
+	it("should accept a number as argument", function() {
+		spyOn(author1, 'get');
+		author1.get(0);
+		expect(typeof author1.get.calls.argsFor(0)[0]).toEqual(typeof 'number');
+		
 	});
 
 	// for the search function
@@ -44,18 +46,18 @@ describe ("NotesApplication", function() {
 
 	});
 
-	//for the delete function
-	it("should delete a note given an index", function(note_id){
-		expect(author1.delete(note_id)).toBeDefined();
-		expect(typeof author1.delete.calls.argsFor(0)[0]).toMatch(typeof 'number');
-	});
-
 	// for the edit function
-	it("should edit contents based on user input", function(){
+	it("should accept an index and then a string as arguments", function(){
 		spyOn(author1, 'edit');
 		author1.edit(0, 'I hate akara');
 		expect( typeof author1.edit.calls.argsFor(0)[0]).toEqual("number");
 		expect( typeof author1.edit.calls.argsFor(0)[1]).toEqual("string");
 
 	});
+
+	it('should edit string at specified index', function(){
+		author1.edit(0, 'I hate akara');
+		expect( author1.get(0) ).toEqual('I hate akara');
+	}); 
+
 });
